@@ -1,3 +1,25 @@
 <h1> This is Post partial </h1>
 
-<a ui-sref="child">link</a>
+
+Your Name: <input type="text" ng-model="firstname"></br>
+<input type="checkbox" ng-model="message">Secret Message?
+<h1> Your first name is: {{firstname}}</h1>
+<h1 ng-show="message">So Secret</h1>
+</br>
+<a ui-sref="child">Link to child state</a>
+</br>
+</br>
+</br>
+
+
+<div ng-controller="postCtrl">
+	<form novalidate>
+		Name: </br>
+		<input tpye="text" ng-model="user.name"></br>
+		<button ng-click="save(user.name)">Save </button>
+	</form>
+
+<p> user = {{user.name}} </p>
+
+<p ng-repeat="name in names track by $index">{{name}}</br></p>
+</div>
