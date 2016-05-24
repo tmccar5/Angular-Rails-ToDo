@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'responders', '~> 2.2'
 gem 'angular-rails-templates', '~> 1.0'
 gem 'angular-ui-router-rails', '~> 0.2.15'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

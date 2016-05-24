@@ -14,12 +14,12 @@ Your Name: <input type="text" ng-model="firstname"></br>
 
 <div ng-controller="postCtrl">
 	<form novalidate>
-		Name: </br>
-		<input tpye="text" ng-model="user.name"></br>
-		<button ng-click="save(user.name)">Save </button>
+		Title of Post: </br>
+		<input tpye="text" ng-model="post.title"></br>
+		<button ng-click="save(post.title)">Save </button>
 	</form>
 
-<p> user = {{user.name}} </p>
+<p> post = {{post.title}} </p>
 
-<p ng-repeat="name in names track by $index">{{name}}</br></p>
+<p ng-repeat="post in posts track by $index">{{post}}</br></p>
 </div>

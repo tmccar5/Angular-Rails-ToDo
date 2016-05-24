@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .controller('postCtrl', ['$scope', function($scope) {
+  .controller('postCtrl', ['$scope', 'posts','$stateParams', function($scope, posts, $stateParams) {
 		$scope.greeting = '';
 		$scope.customGreeting = '';
 
@@ -19,12 +19,13 @@ angular
 
 
 
-		$scope.names = ["tom","bob","sam"];
+		$scope.posts = posts.posts;
 
-		$scope.user = {name: ""};
+		$scope.post = {title: ""};
 
-		$scope.save = function(name){
-			$scope.names.push(name);
+		$scope.save = function(title){
+			$scope.posts.push(title);
+			$scope.post.title = "";
 		};
 
 }]);
