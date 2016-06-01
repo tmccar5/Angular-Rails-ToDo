@@ -8,7 +8,12 @@ angular
 		.state('post', {
 			url: "/post",
 			templateUrl: "post/_post.html",
-			controller: 'postCtrl'
+			controller: 'postCtrl',
+			resolve: {
+				postPromise: ['posts', function(posts){
+					return posts.getall();
+				}]
+			}
 		})
 		.state('child', {
 			url: "/post",

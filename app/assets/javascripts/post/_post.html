@@ -16,10 +16,10 @@ Your Name: <input type="text" ng-model="firstname"></br>
 	<form novalidate>
 		Title of Post: </br>
 		<input tpye="text" ng-model="post.title"></br>
-		<button ng-click="save(post.title)">Save </button>
+		<button ng-click="addPost(post.title)">Save </button>
 	</form>
 
 <p> post = {{post.title}} </p>
 
-<p ng-repeat="post in posts track by $index">{{post}}</br></p>
+<p ng-repeat="post in posts track by $index">{{post.title}}</br></p>
 </div>

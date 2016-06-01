@@ -21,12 +21,12 @@ angular
 
 		$scope.posts = posts.posts;
 
-		$scope.post = {title: ""};
 
-		$scope.save = function(title){
-			$scope.posts.push(title);
+		$scope.addPost = function(input){
+			posts.create({
+				title: input
+			});
 			$scope.post.title = "";
 		};
-
 }]);
 

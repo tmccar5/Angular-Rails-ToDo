@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'angular_rails_csrf'
 gem 'responders', '~> 2.2'
 gem 'angular-rails-templates', '~> 1.0'
 gem 'angular-ui-router-rails', '~> 0.2.15'
