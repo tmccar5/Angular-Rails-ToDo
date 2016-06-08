@@ -11,6 +11,15 @@ class PostsController < ApplicationController
 		respond_with Post.find(params[:id])
 	end
 
+	def destory
+		respond_with Post.find(params[:id]).destory
+
+	end
+
+	def update
+		respond_with Post.find(params[:id]).update(post_params)
+	end
+
 	private
 
 	def post_params

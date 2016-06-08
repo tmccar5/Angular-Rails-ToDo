@@ -15,5 +15,17 @@ angular
 				o.posts.push(data);
 			});
 		};
+		o.edit = function(post) {
+			return $http.put('/posts/12.json', post).success(function(data){
+				// data = post.title;
+				o.posts.push(data);
+				// angular.copy(data, o.posts);
+			});
+		};
+		// o.destroy = function(post) {
+		// 	return $http.delete('/posts/8.json' + post.id).success(function(data){
+		// 		angular.copy(data, o.posts);
+		// 	});
+		// };
 		return o;
 	}]);

@@ -1,17 +1,6 @@
 <h1> This is Post partial </h1>
 
 
-Your Name: <input type="text" ng-model="firstname"></br>
-<input type="checkbox" ng-model="message">Secret Message?
-<h1> Your first name is: {{firstname}}</h1>
-<h1 ng-show="message">So Secret</h1>
-</br>
-<a ui-sref="child">Link to child state</a>
-</br>
-</br>
-</br>
-
-
 <div ng-controller="postCtrl">
 	<form novalidate>
 		Title of Post: </br>
@@ -19,7 +8,10 @@ Your Name: <input type="text" ng-model="firstname"></br>
 		<button ng-click="addPost(post.title)">Save </button>
 	</form>
 
-<p> post = {{post.title}} </p>
+	<p> post = {{post.title}} </p>
 
-<p ng-repeat="post in posts track by $index">{{post.title}}</br></p>
+	<span ng-repeat="post in posts track by $index">{{post.title}}<input tpye="text" ng-model="post.title"><button ng-click="editPost(post.title)">Update{{post.id}} </button></br></span>
 </div>
+
+
+<!-- <button ng-click"deletePost(post.id)">Delete{{post.id}}</button> -->

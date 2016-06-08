@@ -1,22 +1,6 @@
 angular
   .module('app')
   .controller('postCtrl', ['$scope', 'posts','$stateParams', function($scope, posts, $stateParams) {
-		$scope.greeting = '';
-		$scope.customGreeting = '';
-
-
-		$scope.english = function(){
-			$scope.greeting = "hello";
-		};
-
-		$scope.spanish = function(){
-			$scope.greeting = "hola'!";
-		};
-		$scope.greet = function(phrase){
-			$scope.greeting = phrase;
-		};
-		$scope.firstname = "";
-
 
 
 		$scope.posts = posts.posts;
@@ -27,6 +11,17 @@ angular
 				title: input
 			});
 			$scope.post.title = "";
+		};
+		// $scope.deletePost = function(num){
+		// 	posts.destory({
+		// 		id: num
+		// 	});
+		// 	console.log(num);
+		// };
+		$scope.editPost = function(input){
+			posts.edit({
+				title: input,
+			});
 		};
 }]);
 
