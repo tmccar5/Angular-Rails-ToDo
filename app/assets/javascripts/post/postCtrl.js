@@ -1,27 +1,28 @@
 angular
   .module('app')
-  .controller('postCtrl', ['$scope', 'posts','$stateParams', function($scope, posts, $stateParams) {
+  .controller('postCtrl', ['$scope', 'Post','$stateParams', 'postsResolve', function($scope, Post, $stateParams, postsResolve) {
 
 
-		$scope.posts = posts.posts;
+		$scope.posts = Post.index();
 
+		// $scope.posts = postsResolve;
+	
 
 		$scope.addPost = function(input){
-			posts.create({
-				title: input
-			});
-			$scope.post.title = "";
+		
+			Post.create({title: input});
+			$scope.post = null;
 		};
-		// $scope.deletePost = function(num){
-		// 	posts.destory({
-		// 		id: num
-		// 	});
-		// 	console.log(num);
-		// };
-		$scope.editPost = function(input){
-			posts.edit({
-				title: input,
-			});
+
+		$scope.editPost = function(title, id){
+
+			Post.update({id: id, title: title});
+			// $scope.post.newTitle = "";
 		};
+
+		$scope.deletePost = function(id){
+			Post.destory({id: id});
+		};
+
 }]);
 

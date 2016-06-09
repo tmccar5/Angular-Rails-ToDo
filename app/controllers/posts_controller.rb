@@ -11,8 +11,9 @@ class PostsController < ApplicationController
 		respond_with Post.find(params[:id])
 	end
 
-	def destory
-		respond_with Post.find(params[:id]).destory
+	def destroy
+		post = Post.find(params[:id])
+		respond_with post.destroy!
 
 	end
 
